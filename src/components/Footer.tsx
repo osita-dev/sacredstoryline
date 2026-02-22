@@ -6,7 +6,7 @@ const Footer = () => {
           Sacred Storyline
         </p>
         <a
-          href="mailto:hello@sacredstoryline.com"
+          href="mailto:sacredstoryline0@gmail.com"
           className="font-body text-sm text-muted-foreground hover:text-primary transition-colors"
         >
           jesus@sacredstoryline
