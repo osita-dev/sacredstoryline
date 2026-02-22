@@ -9,7 +9,7 @@ const Footer = () => {
           href="mailto:hello@sacredstoryline.com"
           className="font-body text-sm text-muted-foreground hover:text-primary transition-colors"
         >
-          hello@sacredstoryline.com
+          jesus@sacredstoryline
         </a>
         <p className="font-body text-xs text-muted-foreground mt-4">
           © {new Date().getFullYear()} Sacred Storyline. All rights reserved.
