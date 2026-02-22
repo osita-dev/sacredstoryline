@@ -21,8 +21,8 @@ const HeroSection = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight mb-6"
         >
-          Sacred Storyline brings faith to life — daily stories.{" "}
-          <span className="text-primary">reflections, and real action helping the poor, sick, homeless, and motherless homes..</span>
+        Join millions in changing lives today {" "}
+          <span className="text-primary"></span>
         </motion.h1>
 
         <motion.p
@@ -31,7 +31,8 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           className="font-body text-lg sm:text-xl text-muted-foreground max-w-xl mx-auto mb-10 leading-relaxed"
         >
-          Join millions in changing lives today
+
+          Sacred Storyline brings faith to life — daily stories, reflections, and real action helping the poor, sick, homeless, and motherless homes..
         </motion.p>
 
         <motion.div
