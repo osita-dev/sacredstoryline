@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import heroBg from "@/assets/hero-bg.jpg";
+import heroBg from "@/assets/hero-bg.jpeg";
 
 const HeroSection = () => {
   const scrollToDonate = () => {
@@ -9,7 +9,7 @@ const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div
-        className="absolute inset-0 bg-cover bg-center opacity-30"
+        className="absolute inset-0 bg-cover bg-center opacity-100"
         style={{ backgroundImage: `url(${heroBg})` }}
       />
       <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/40 to-background" />
@@ -21,7 +21,7 @@ const HeroSection = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight mb-6"
         >
-        Join millions in changing lives today {" "}
+          Join millions in changing lives today{" "}
           <span className="text-primary"></span>
         </motion.h1>
 
@@ -29,10 +29,9 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-          className="font-body text-lg sm:text-xl text-muted-foreground max-w-xl mx-auto mb-10 leading-relaxed"
+          className="font-body text-lg sm:text-xl text-foreground max-w-xl mx-auto mb-10 leading-relaxed"
         >
-
-          Sacred Storyline brings faith to life — daily stories, reflections, and real action helping the poor, sick, homeless, and motherless homes..
+         Sacred Storyline brings faith to life, daily stories, reflections, and real action helping the poor, sick, homeless, and motherless homes..
         </motion.p>
 
         <motion.div
