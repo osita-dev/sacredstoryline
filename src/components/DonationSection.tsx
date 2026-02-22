@@ -186,7 +186,7 @@ const DonationSection: React.FC = () => {
           <div className="mb-6">
             <input
               type="number"
-              placeholder="Custom amount"
+              placeholder="Custom amount $2 $5 $10 etc."
               value={custom}
               onChange={(e) => {
                 setCustom(e.target.value);
