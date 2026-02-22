@@ -30,13 +30,18 @@ const DonationSection: React.FC = () => {
   const [custom, setCustom] = useState<string>("");
   const [recurring, setRecurring] = useState<boolean>(false);
   const [email, setEmail] = useState<string>("");
-  const [currency] = useState<string>("NGN"); // Change to NGN if needed
 
   const [popup, setPopup] = useState<PopupState>({
     show: false,
     type: "info",
     message: "",
   });
+
+  // ===========================
+  // Exchange rate (USD → NGN)
+  // Replace with live backend rate in production
+  // ===========================
+  const EXCHANGE_RATE = 1600; // 1 USD = 1600 NGN
 
   const isCustom = custom !== "";
   const finalAmount: number = Number(isCustom ? custom : selected);
@@ -46,8 +51,7 @@ const DonationSection: React.FC = () => {
   =========================== */
   const loadPaystackScript = (): Promise<boolean> => {
     return new Promise((resolve) => {
-      if (document.getElementById("paystack-script"))
-        return resolve(true);
+      if (document.getElementById("paystack-script")) return resolve(true);
 
       const script = document.createElement("script");
       script.src = "https://js.paystack.co/v1/inline.js";
@@ -88,13 +92,18 @@ const DonationSection: React.FC = () => {
       });
     }
 
-    const amountInKobo = finalAmount * 100;
+    // ===========================
+    // Convert USD → NGN
+    // Paystack requires NGN kobo
+    // ===========================
+    const ngnAmount = finalAmount * EXCHANGE_RATE;
+    const amountInKobo = Math.round(ngnAmount * 100);
 
     const handler = window.PaystackPop.setup({
       key: import.meta.env.VITE_PAYSTACK_PUBLIC_KEY,
       email,
       amount: amountInKobo,
-      currency,
+      currency: "NGN",
       ref: "DON_" + Date.now(),
       metadata: { recurring },
 
@@ -211,7 +220,7 @@ const DonationSection: React.FC = () => {
             onClick={handleDonate}
             className="w-full bg-primary text-white font-semibold text-lg py-4 rounded-lg hover:brightness-110 transition-all"
           >
-            Donate ${finalAmount}
+            Donate ${finalAmount} (₦{(finalAmount * EXCHANGE_RATE).toLocaleString()})
             {recurring ? " / month" : ""}
           </button>
 
