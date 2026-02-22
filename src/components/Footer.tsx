@@ -3,7 +3,7 @@ const Footer = () => {
     <footer className="bg-secondary/60 border-t border-border/50 py-10">
       <div className="container mx-auto px-6 text-center">
         <p className="font-heading text-lg font-semibold text-foreground mb-2">
-          Sacred Storyline
+          SACRED STORYLINE
         </p>
         <a
           href="mailto:sacredstoryline0@gmail.com"
